@@ -128,9 +128,28 @@ a:focus {
   color: $theme-secondary !important;
 }
 
+.text-success {
+  color: $theme-success !important;
+}
+
+.text-warning {
+  color: $theme-warning !important;
+}
+
+.text-danger {
+  color: $theme-danger !important;
+}
+
 /* ---------------------------------------------------
     COLORS
 ----------------------------------------------------- */
+.bg-primary {
+  background-color: $theme-primary;
+}
+
+.bg-secondary {
+  background-color: $theme-secondary;
+}
 
 /* ---------------------------------------------------
     BORDERS
@@ -156,7 +175,7 @@ a:focus {
   font-weight: 500;
   font-size: 14px;
   transition: $transition-cubic-bezier;
-  box-shadow: $shadow-8dp;
+  box-shadow: $shadow-4dp;
   z-index: 999;
 }
 
@@ -169,20 +188,29 @@ a:focus {
   color: $theme-primary;
   font-family: $font-raleway;
   font-weight: bold;
+
+  &:hover {
+    color: $theme-primary-hover;
+  }
+
+  &:focus,
+  &:active {
+    color: $theme-primary-active;
+  }
 }
 
 .navbar a {
   color: $theme-on-primary;
-}
 
-.navbar a:hover {
-  background-color: #bebebe1c;
-  border-radius: $border-radius-8;
-}
+  &:hover {
+    background-color: #bebebe1c;
+    border-radius: $border-radius-8;
+  }
 
-.navbar a:active,
-.navbar a:focus {
-  color: $theme-primary !important;
+  &:focus,
+  &:active {
+    color: $theme-primary !important;
+  }
 }
 
 /* ---------------------------------------------------
@@ -195,11 +223,12 @@ a:focus {
   /* 1dp */
   box-shadow: $shadow-1dp;
   transition: $transition-cubic-bezier;
-}
 
-.card:hover {
-  /* 8dp */
-  box-shadow: $shadow-8dp;
+  &:hover {
+    /* 8dp */
+    box-shadow: $shadow-8dp;
+  }
+
 }
 
 .card-header {
@@ -240,16 +269,22 @@ a:focus {
 .card-outline {
   box-shadow: none !important;
   border: 1px solid $theme-surface-card-outline;
+
+  &:hover {
+    transform: translate(0, -15px);
+    box-shadow: $shadow-4dp !important;
+  }
 }
 
 .card-static-elevation {
   /* 1dp */
   box-shadow: $shadow-1dp;
-}
 
-.card-static-elevation:hover {
-  /* 1dp */
-  box-shadow: $shadow-1dp;
+  &:hover {
+    /* 1dp */
+    box-shadow: $shadow-1dp;
+  }
+
 }
 
 /* ---------------------------------------------------
@@ -274,11 +309,17 @@ a:focus {
   vertical-align: middle;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    box-shadow: $shadow-4dp;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: $shadow-6dp !important;
+  }
 }
 
-.btn:hover {
-  box-shadow: $shadow-4dp;
-}
 
 .btn-sm {
   padding: .15rem .5rem !important;
@@ -301,17 +342,17 @@ a:focus {
   background-color: $theme-primary;
   color: $theme-on-primary-inverse;
   border: none !important;
-}
 
-.btn-primary:hover {
-  background-color: $theme-primary-hover;
-  color: $theme-on-primary-inverse;
-}
+  &:hover {
+    background-color: $theme-primary-hover;
+    color: $theme-on-primary-inverse;
+  }
 
-.btn-primary:focus,
-.btn-primary:active {
-  background-color: $theme-primary-active !important;
-  color: $theme-on-primary-inverse !important;
+  &:focus,
+  &:active {
+    background-color: $theme-primary-active !important;
+    color: $theme-on-primary-inverse !important;
+  }
 }
 
 /* ---------------------------------------------------
@@ -348,4 +389,167 @@ a:focus {
   transform: scale(0, 0);
   opacity: .3;
   transition: 0s;
+}
+
+/* ---------------------------------------------------
+    FORMS
+----------------------------------------------------- */
+/* FORM CONTROL */
+.form-control {
+  border: 1px solid var(--theme-text-field-outlined);
+  background-color: var(--theme-surface-1dp);
+  color: var(--theme-on-surface);
+
+  &:hover {
+    border: 1px solid var(--theme-text-field-outlined-hover);
+    background-color: var(--theme-surface-1dp);
+    color: var(--theme-on-surface);
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid var(--theme-text-field-outlined-hover);
+    background-color: var(--theme-surface-1dp);
+    color: var(--theme-on-surface);
+    box-shadow: none;
+  }
+}
+
+/* FORM CONTROL OUTLINED */
+.form-control-material-outlined {
+  border: 1px solid $theme-text-field-outlined;
+  background-color: $theme-surface-1dp;
+  color: $theme-on-surface;
+
+  &:hover {
+    border: 1px solid $theme-text-field-outlined-hover;
+    background-color: $theme-surface-1dp;
+    color: $theme-on-surface;
+  }
+
+  &:focus,
+  &:active {
+    border: 2px solid $theme-primary;
+    box-shadow: none;
+    background-color: $theme-surface-1dp;
+    color: $theme-on-surface;
+  }
+}
+
+/* FLOATING LABEL */
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: $theme-on-surface;
+  pointer-events: none;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+/* .form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+} */
+
+/* FLOATING OUTLINED LABEL */
+.form-label-group input:not(:placeholder-shown)~label {
+  top: -13px;
+  padding: .25rem;
+  margin-left: 10px;
+  font-size: 12px;
+  color: $theme-primary;
+  width: auto;
+  height: auto;
+  background-color: $theme-surface-1dp;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: $theme-primary;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+.input-group-text {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $black;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $white;
+  border: 1px solid $white;
+  border-radius: 50px;
+}
+
+.input-group>.custom-select:not(:first-child),
+.input-group>.form-control:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }

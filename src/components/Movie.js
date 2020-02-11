@@ -8,9 +8,9 @@ const Movie = ({ movie }) => {
         <div className="col-md-4 col-lg-3">
             <div className="card card-outline mb-3">
                 <div className="card-body text-center">
-                    <h5 className="font-raleway text-primary font-weight-bold">{ movie.Title }</h5>
+                    <h5 className="font-raleway text-secondary font-weight-bold">{ movie.Title }</h5>
                     <div>
-                        <img  className="img-fluid"
+                        <img className="img-fluid border-radius-8"
                         alt={`The movie titled: ${movie.Title}`}
                         title={`${movie.Title}`}
                         src={poster}></img>

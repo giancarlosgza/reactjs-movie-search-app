@@ -18,17 +18,21 @@ const Search = (props) => {
     }
 
     return (
-        <form className="form-row">
-            <div className="form-group col-md-8">
+        <form className="form">
+            <div className="form-label-group">
                 <input 
                     value={searchValue}
                     onChange={handleSearchInputChanges}
-                    type="text" className="form-control" />
+                    type="text" className="form-control form-control-material-outlined" 
+                    placeholder="Name"
+                    autocomplete="off"
+                />
+                <label for="searchMovie">Name</label>
             </div>
-            <div className="form-group col-md-4">
+            <div className="form-group text-right">
                 <button onClick={callSearchFunction} type="submit" 
                     value="SEARCH" 
-                    className="btn btn-primary">Search</button>
+                    className="btn btn-primary m-0">Search</button>
             </div>
         </form>
     );

@@ -3,6 +3,7 @@ import "../App.scss";
 import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
+import onboarding from "../assets/empty.svg";
 
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
 
@@ -83,17 +84,19 @@ const App = () => {
       <Header text="MOVIEFY" />
       <div className="container mt-4">
         <div className="row mb-3 justify-content-center">
-          <div className="col-md-8">
+          <div className="col-md-6">
             <Search search={search} />
-            <small className="App-intro">Search a movie or videogame</small>
           </div>
         </div>
         
         <div className="row">
           {loading && !errorMessage ? (
-            <span>loading... </span>
+            <span>loading...</span>
           ) : errorMessage ? (
-            <div className="errorMessage">{errorMessage}</div>
+            <div className="col-md-12 text-center">
+              <img className="img-fluid" width="300" src={onboarding} alt="Onboarding img" />
+              <h3 className="font-weight-bold text-danger mt-5">{errorMessage}</h3>
+            </div>
           ) : (
             movies.map((movie, index) => (
               <Movie key={`${index}-${movie.Title}`} movie={movie} />

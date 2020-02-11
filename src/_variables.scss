@@ -14,12 +14,12 @@ $black: #000;
 $white: #fff;
 
 // Primary colors
-$theme-primary: #ff3c00;
-$theme-primary-hover: #f13400;
-$theme-primary-active: #e32a00;
-$theme-secondary: #415c6a;
-$theme-secondary-hover: #334955;
-$theme-secondary-active: #22343e;
+$theme-primary: #6041ea;
+$theme-primary-hover: #533ce3;
+$theme-primary-active: #4034da;
+$theme-secondary: #ff3c00;
+$theme-secondary-hover: #f13400;
+$theme-secondary-active: #e32a00;
 $theme-success: #00c853;
 $theme-warning: #ffab00;
 $theme-danger: #d50000;
@@ -86,3 +86,10 @@ $shadow-11dp: 0px 6px 7px -4px rgba(0, 0, 0, 0.2),
 $shadow-12dp: 0px 7px 8px -4px rgba(0, 0, 0, 0.2),
 0px 12px 17px 2px rgba(0, 0, 0, 0.14),
 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+
+// Forms
+$theme-text-field-filled: #f3f3f3;
+$theme-text-field-filled-hover: #eeeeee;
+$theme-text-field-filled-active: #d1d1d1;
+$theme-text-field-outlined: #bbbbbb;
+$theme-text-field-outlined-hover: #000000;
