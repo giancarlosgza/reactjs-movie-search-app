@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from "react";
-import "../App.css";
+import "../App.scss";
 import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
@@ -80,20 +80,27 @@ const App = () => {
 
     return (
     <div className="App">
-      <Header text="HOOKED" />
-      <Search search={search} />
-      <p className="App-intro">Sharing a few of our favourite movies</p>
-      <div className="movies">
-        {loading && !errorMessage ? (
-          <span>loading... </span>
-        ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
-        ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
-          ))
-        )}
-      </div>
+      <Header text="MOVIEFY" />
+      <div className="container mt-4">
+        <div className="row mb-3 justify-content-center">
+          <div className="col-md-8">
+            <Search search={search} />
+            <small className="App-intro">Search a movie or videogame</small>
+          </div>
+        </div>
+        
+        <div className="row">
+          {loading && !errorMessage ? (
+            <span>loading... </span>
+          ) : errorMessage ? (
+            <div className="errorMessage">{errorMessage}</div>
+          ) : (
+            movies.map((movie, index) => (
+              <Movie key={`${index}-${movie.Title}`} movie={movie} />
+            ))
+          )}
+        </div>
+        </div>
     </div>
   );
 };
