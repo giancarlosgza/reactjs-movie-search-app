@@ -1,0 +1,555 @@
+@import '_variables.scss';
+
+/* ---------------------------------------------------
+    GENERAL STYLES
+----------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-muli;
+  color: $black;
+  background-color: $white;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  line-height: 15px;
+  font-weight: 400;
+  color: $black;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: -1.5px;
+  font-weight: lighter;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 31px;
+  letter-spacing: -0.5px;
+  font-weight: lighter;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 25.92px;
+  letter-spacing: 0px;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+h6 {
+  font-size: 14.99px;
+  letter-spacing: 0.15px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+p,
+a {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+a {
+  color: #2e2e2e;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: $black;
+  text-decoration: none;
+}
+
+a:active,
+a:focus {
+  color: $black;
+  text-decoration: none;
+}
+
+.title {
+  font-weight: normal;
+  text-transform: initial;
+  letter-spacing: 0.5px;
+  line-height: 10px;
+}
+
+.subtitle {
+  font-weight: normal;
+  text-transform: initial;
+  letter-spacing: 0.15px;
+  line-height: 10px;
+  color: #333333;
+}
+
+/* ---------------------------------------------------
+    FONTS VARIANTS 
+----------------------------------------------------- */
+.text-ralewey {
+  font-family: $font-raleway;
+}
+
+.text-muli {
+  font-family: $font-muli;
+}
+
+.text-primary {
+  color: $theme-primary !important;
+}
+
+.text-secondary {
+  color: $theme-secondary !important;
+}
+
+.text-success {
+  color: $theme-success !important;
+}
+
+.text-warning {
+  color: $theme-warning !important;
+}
+
+.text-danger {
+  color: $theme-danger !important;
+}
+
+/* ---------------------------------------------------
+    COLORS
+----------------------------------------------------- */
+.bg-primary {
+  background-color: $theme-primary;
+}
+
+.bg-secondary {
+  background-color: $theme-secondary;
+}
+
+/* ---------------------------------------------------
+    BORDERS
+----------------------------------------------------- */
+.border-radius-8 {
+  border-radius: $border-radius-8 !important;
+}
+
+.border-radius-12 {
+  border-radius: $border-radius-12 !important;
+}
+
+.border-radius-25 {
+  border-radius: $border-radius-25 !important;
+}
+
+/* ---------------------------------------------------
+    NAVBAR
+----------------------------------------------------- */
+.navbar {
+  background-color: $theme-surface !important;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 14px;
+  transition: $transition-cubic-bezier;
+  box-shadow: $shadow-4dp;
+  z-index: 999;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $theme-primary;
+  font-family: $font-raleway;
+}
+
+.navbar .navbar-brand {
+  color: $theme-primary;
+  font-family: $font-raleway;
+  font-weight: bold;
+
+  &:hover {
+    color: $theme-primary-hover;
+  }
+
+  &:focus,
+  &:active {
+    color: $theme-primary-active;
+  }
+}
+
+.navbar a {
+  color: $theme-on-primary;
+
+  &:hover {
+    background-color: #bebebe1c;
+    border-radius: $border-radius-8;
+  }
+
+  &:focus,
+  &:active {
+    color: $theme-primary !important;
+  }
+}
+
+/* ---------------------------------------------------
+    CARD
+----------------------------------------------------- */
+.card {
+  background-color: $theme-surface-1dp;
+  color: $theme-on-primary;
+  border-radius: $border-radius-8;
+  /* 1dp */
+  box-shadow: $shadow-1dp;
+  transition: $transition-cubic-bezier;
+
+  &:hover {
+    /* 8dp */
+    box-shadow: $shadow-8dp;
+  }
+
+}
+
+.card-header {
+  background-color: $theme-surface-1dp;
+  border-bottom: 1px solid transparent;
+}
+
+.card-header:first-child {
+  border-top-left-radius: $border-radius-8;
+  border-top-right-radius: $border-radius-8;
+}
+
+.card-footer {
+  padding: .75rem 1.25rem;
+  background-color: $theme-surface-1dp;
+  border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card-footer:last-child {
+  border-bottom-left-radius: $border-radius-8;
+  border-bottom-right-radius: $border-radius-8;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: $border-radius-8;
+  border-top-right-radius: $border-radius-8;
+}
+
+.card-square {
+  border-radius: 0px;
+}
+
+.card-round {
+  border-radius: 50px;
+}
+
+.card-outline {
+  box-shadow: none !important;
+  border: 1px solid $theme-surface-card-outline;
+
+  &:hover {
+    transform: translate(0, -15px);
+    box-shadow: $shadow-4dp !important;
+  }
+}
+
+.card-static-elevation {
+  /* 1dp */
+  box-shadow: $shadow-1dp;
+
+  &:hover {
+    /* 1dp */
+    box-shadow: $shadow-1dp;
+  }
+
+}
+
+/* ---------------------------------------------------
+    BUTTONS STYLES
+----------------------------------------------------- */
+.btn {
+  padding: 8px;
+  margin: 4px;
+  font-family: $font-raleway;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08929em;
+  /*height: 36px;*/
+  background-color: $theme-surface;
+  color: $theme-on-primary;
+  border-radius: $border-radius-8;
+  border-style: none;
+  text-transform: uppercase;
+  box-shadow: $shadow-1dp;
+  transition: $transition-cubic-bezier;
+  /*display: inline-flex;*/
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: $shadow-4dp;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: $shadow-6dp !important;
+  }
+}
+
+
+.btn-sm {
+  padding: .15rem .5rem !important;
+  font-size: .875rem !important;
+  line-height: 1.5 !important;
+  border-radius: .2rem !important;
+  margin: 1px !important;
+}
+
+.btn-round {
+  border-radius: $border-radius-25 !important;
+  display: inline-flex;
+  padding: 10px;
+}
+
+/* ---------------------------------------------------
+    PRIMARY BUTTONS
+----------------------------------------------------- */
+.btn-primary {
+  background-color: $theme-primary;
+  color: $theme-on-primary-inverse;
+  border: none !important;
+
+  &:hover {
+    background-color: $theme-primary-hover;
+    color: $theme-on-primary-inverse;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $theme-primary-active !important;
+    color: $theme-on-primary-inverse !important;
+  }
+}
+
+/* ---------------------------------------------------
+    RIPPLE
+----------------------------------------------------- */
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #ffffff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(20, 20);
+  opacity: 0;
+  transition: transform .4s, opacity 1s;
+}
+
+.ripple-dark:after {
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}
+
+/* ---------------------------------------------------
+    FORMS
+----------------------------------------------------- */
+/* FORM CONTROL */
+.form-control {
+  border: 1px solid var(--theme-text-field-outlined);
+  background-color: var(--theme-surface-1dp);
+  color: var(--theme-on-surface);
+
+  &:hover {
+    border: 1px solid var(--theme-text-field-outlined-hover);
+    background-color: var(--theme-surface-1dp);
+    color: var(--theme-on-surface);
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid var(--theme-text-field-outlined-hover);
+    background-color: var(--theme-surface-1dp);
+    color: var(--theme-on-surface);
+    box-shadow: none;
+  }
+}
+
+/* FORM CONTROL OUTLINED */
+.form-control-material-outlined {
+  border: 1px solid $theme-text-field-outlined;
+  background-color: $theme-surface-1dp;
+  color: $theme-on-surface;
+
+  &:hover {
+    border: 1px solid $theme-text-field-outlined-hover;
+    background-color: $theme-surface-1dp;
+    color: $theme-on-surface;
+  }
+
+  &:focus,
+  &:active {
+    border: 2px solid $theme-primary;
+    box-shadow: none;
+    background-color: $theme-surface-1dp;
+    color: $theme-on-surface;
+  }
+}
+
+/* FLOATING LABEL */
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: $theme-on-surface;
+  pointer-events: none;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+/* .form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+} */
+
+/* FLOATING OUTLINED LABEL */
+.form-label-group input:not(:placeholder-shown)~label {
+  top: -13px;
+  padding: .25rem;
+  margin-left: 10px;
+  font-size: 12px;
+  color: $theme-primary;
+  width: auto;
+  height: auto;
+  background-color: $theme-surface-1dp;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: $theme-primary;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+.input-group-text {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $black;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $white;
+  border: 1px solid $white;
+  border-radius: 50px;
+}
+
+.input-group>.custom-select:not(:first-child),
+.input-group>.form-control:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
